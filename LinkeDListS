@@ -1,0 +1,95 @@
+_________________________________________________________
+
+
+
+Write an algorithm to find the middle element of a linked list without using the .length property
+
+function lengthlessMiddle(list) {
+	let len = 0;
+	while (this._find(len) != null) {
+		len++
+	}
+	if(this._find(len) === null) {
+	len--
+	}
+
+return len
+}
+
+_________________________________________________________
+_________________________________________________________
+
+Write an algorithm to find the third element from the end of a linked list without using the .length property
+
+function lengthlessMiddle(list) {
+	let len = 0;
+	while (this._find(len) != null) {
+		len++
+	}
+	if(this._find(len) === null) {
+	len--
+	}
+
+return len -3
+}
+
+_________________________________________________________
+Write an algorithm to reverse a linked list
+
+function reversal() {
+this.head = this.length-1
+
+	while(this.find(head-1).value != null) {
+	let node = this.find(head)
+	node.next = this.find(head-1)
+	this.head--
+    }
+}
+
+_________________________________________________________
+Write an algorithm to find whether a linked list has a cycle 
+(i.e. whether a node in the list has its next value pointing to an earlier node in the list)
+
+function cycleTest() {
+this.head = 0;
+let node = this.head;
+
+	while(node.next === this.head+1 && this.head < this.length) {
+		node = node.next
+		this.head++
+	}
+	if(this.head != this.length-1) {
+	return false
+	}
+return true
+
+}
+
+_________________________________________________________
+_________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+_________________________________________________________
+
+
+
+
+
+
+
+_________________________________________________________
+
+
+
+
+
+

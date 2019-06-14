@@ -1,0 +1,189 @@
+_____________________________________________________
+
+______Even or odd_______________________________________________
+
+function isEven(value){
+  if (value % 2 == 0){
+ticks++
+    return true;
+  }
+  else
+ticks++
+    return false;
+}
+
+3 = 1
+7 = 1
+10 = 1
+_____________________________________________________
+-Constant time O(1)
+-simply checks if remainder after divided by 2
+-takes same amount to process regardless size of input
+_____________________________________________________
+
+______________Are you here?_______________________________________
+
+
+function areYouHere(arr1, arr2) {
+    for (let i=0; i<arr1.length; i++) {
+        const el1 = arr1[i];
+        ticks++
+        for (let j=0; j<arr2.length; j++) {
+            const el2 = arr2[j];
+            ticks++
+            if (el1 === el2) return true;
+        }
+    }
+    return false;
+}
+
+_____________________________________________________
+-polynomial time O(n)
+-loops through each char in one arr for every char of the other and 
+    compares. The length of the first arr directly affects processing time,
+    the length of second arr affects length of processing upon first arr
+-larger the inputs, longer the processing
+_____________________________________________________
+
+_____________Doubler___________________________________________
+
+
+function doubleArrayValues(array) {
+    for (let i=0; i<array.length; i++) {
+        array[i] *= 2;
+    }
+    return array;
+}
+_____________________________________________________
+-linear time O(n)
+-performs the same process for each char in input arr
+    size of input directly determines processing time
+
+_____________________________________________________
+
+_________Naive Search____________________________ticks________________
+
+function naiveSearch(array, item) {
+    for (let i=0; i<array.length; i++) {
+        ticks++
+        if (array[i] === item) {
+            return i;
+        }
+    }
+}
+
+__________________________________________________
+-Linear Time O(n)
+- loops over arr in search of particular itme
+     size of input directly affects length of processing
+_____________________________________________________
+
+____________Creating pairs:_________________________________________
+
+function createPairs(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        for(let j = i+1; j < arr.length; j++) {
+            console.log(arr[i] + ", " +  arr[j] );
+        }
+    }
+}
+3 = 6
+7 = 28
+10 = 55
+
+_____________________________________________________
+-Exponential time O(2^n)
+-each single increase of input adds another group of 
+    ticks the length of the now longer arr
+_____________________________________________________
+
+______Computing fibonaccis_______________________________________________
+
+function generateFib(num) {
+    let result = [];
+    for(let i = 1; i <= num; i++) {
+        if(i === 1) {
+            result.push(0)
+        }
+        else if (i === 2) {
+            result.push(1)
+        }
+        else {
+            result.push(result[i-2] + result[i - 3]);
+        }
+    }
+    return result;
+};
+3 = 3
+7 = 7
+10 = 10
+
+_________________________________________________
+-Linear time O(n)
+-process time directly proportionate to size of input  
+_____________________________________________________
+_______An Efficient Search______________________________________________
+Assuming a sorted array:
+
+function efficientSearch(array, item) {
+    let minIndex = 0;
+    let maxIndex = array.length - 1;
+    let currentIndex;
+    let currentElement;
+
+    while (minIndex <= maxIndex) {
+        currentIndex = Math.floor((minIndex + maxIndex) / 2);
+        currentElement = array[currentIndex];
+
+        if (currentElement < item) {
+            minIndex = currentIndex + 1;
+        }
+        else if (currentElement > item) {
+            maxIndex = currentIndex - 1;
+        }
+        else {
+            return currentIndex;
+        }
+    }
+    return -1;
+}
+
+_____________________________________________________
+-Logarithmic time O(log(n))
+-bigger the input the longer the processing, though aize of
+    data cuts in half with every tick
+_____________________________________________________
+____Random element_________________________________________________
+
+function findRandomElement(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+_____________________________________________________
+-constant Time )(1)
+-operation takes same amount of processing regardless of arr size
+_____________________________________________________
+______Is it prime?_______________________________________________
+
+function isPrime(n) {
+    if(n < 2 || n % 1 != 0) {
+        return false
+        }
+    for(let i =2; i < n; ++i) {
+        if(n % i == 0) {
+            return false}
+    }
+    return true;
+}
+_____________________________________________________
+-linear Time O(n)
+-larger the input, longer the search
+____________________________________________________
+
+
+
+
+_____________________________________________________
+
+_____________________________________________________
+
+

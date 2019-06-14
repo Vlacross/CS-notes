@@ -1,0 +1,153 @@
+_____________________________________________________________________________
+Imagine you have an array of numbers. Write an algorithm to remove all numbers less than five from the array --
+_____________________________________________________________________________
+
+function underFive(arr) {
+let bar = arr;
+	for(let i = 0; i < bar.length; i++) {
+	if(bar[i] < 5) {
+		if(i <= bar.length / 2) {
+			for(j = i; j >0; j--) {
+			
+			bar[j] = bar[j - 1]
+			}
+		bar.shift()
+		i--
+		}
+		else if(i > bar.length / 2) {
+		for(k = i; k < bar.length-1; k++) {
+		bar[k] = bar[k+1]
+		}
+		bar.pop()
+		i--
+        }
+	} 
+}
+return arr
+}
+
+_____________________________________________________________________________
+Imagine you have two arrays which have already been sorted. Write an algorithm to merge the two arrays into a single array, which should also be sorted --
+_____________________________________________________________________________
+
+
+function sortBine(ar1, ar2) {
+let cycle = ar1[ar1.length-1] > ar2[ar2.length-1] ? ar1 : ar2;
+let incorp = cycle === ar1 ? ar2 : ar1
+let result = [];
+
+for(let i = 0; i < cycle.length; i++) {
+	if(incorp.length === 0 || cycle[i] < incorp[0]) {
+	result.push(cycle[i])
+	}
+	if (cycle[i] > incorp[0]) {
+	result.push(incorp[0])
+	incorp.shift()
+	i--	
+    }
+}
+return result
+}
+
+ar1 = [1, 3, 6, 8, 11]
+ar2 = [2, 3, 5, 8, 9, 10]
+_____________________________________________________________________________
+Given an array of numbers, write an algorithm to find out the products of every number, except the one at that index. 
+_____________________________________________________________________________
+
+function allButOne(arr) {
+let result = [];
+for(let i = 0; i < arr.length; i++) {
+	let current = 1;
+	for(let j = 0; j<arr.length; j++) {
+		if(j != i) {
+			
+			current = current*arr[j]
+			}
+		}
+	result.push(current)
+	}
+return result;
+}
+
+_____________________________________________________________________________
+
+
+
+
+_____________________________________________________________________________
+
+
+
+
+
+_____________________________________________________________________________
+
+
+
+
+
+
+_____________________________________________________________________________
+_____________________________________________________________________________
+
+// The word's worst allocator
+var memory = new Float64Array(1024);
+var head = 0;
+
+var allocate = function(size) {
+    if (head + size > memory.length) {
+        return null;
+    }
+    var start = head;
+    head += size;
+    return start;
+};
+
+var free = function(ptr) {
+};
+
+var copy = function(to, from, size) {
+    if (from === to) {
+        return;
+    }
+    else if (from > to) {
+        // Iterate forwards
+        for (var i=0; i<size; i++) {
+            set(to + i, get(from + i));
+        }
+    }
+    else {
+        // Iterate backwards
+        for (var i=size - 1; i>=0; i--) {
+            set(to + i, get(from + i));
+        }
+    }
+};
+
+var get = function(ptr) {
+    return memory[ptr];
+};
+
+var set = function(ptr, value) {
+    memory[ptr] = value;
+};
+
+exports.allocate = allocate;
+exports.free = free;
+exports.copy = copy;
+exports.get = get;
+exports.set = set;
+
+
+
+
+
+
+
+
+
+
+
+
+

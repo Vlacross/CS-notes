@@ -1,0 +1,117 @@
+function OhNsort(arr, lowest, highest) {
+	
+	for(let i = 0; i<arr.length;) {
+		if (arr[i] === lowest || arr[i] === highest) {
+			let end = arr[i] === lowest ? 0 : arr.length-1;
+			let tmp = arr[end];
+			arr[end] = arr[i];
+			arr[i] = tmp;
+		}
+		else if (i > 1) {
+			
+			for(let j = i-1; j > 0;) {
+				if(arr[j+1] > arr[i] && arr[j] < arr[i]) {
+					tmp = arr[j];
+					arr[j] = arr[i];
+					arr[i] = tmp
+				}
+			}
+		}
+
+	}
+	return arr
+} 
+
+
+_________________________________________________________________________
+V Known to sort highest and lowest to ends V
+_________________________________________________________________________
+
+
+
+
+
+
+
+function OhNsort(arr, lowest, highest) {
+	
+	for(let i = 0; i<arr.length; i++) {
+		if (arr[i] === lowest || arr[i] === highest) {
+			let end = arr[i] === lowest ? 0 : arr.length-1;
+			let tmp = arr[end];
+			arr[end] = arr[i];
+			arr[i] = tmp;
+		}
+		
+
+}
+return arr
+} 
+
+______________________________________________
+Known working sort - doesn't use highest and lowest
+__________________________________________________________
+function OhNsort(arr, lowest, highest) {
+	let tmp;
+	let tmp2;
+	
+	for(let i = 0; i<arr.length; i++) {
+		
+		 if(i>0) {
+			tmp=i
+			for(let j=i-1; j>=0; j--) {
+				if(arr[tmp] < arr[j]) {
+					tmp2 = arr[j];
+					arr[j] = arr[tmp];
+					arr[tmp] = tmp2;
+					tmp--
+				
+				}
+			}
+        }
+	}
+	return arr
+} 
+
+
+
+
+???????????????????????????????????????
+function OhNsort(arr, lowest, highest) {
+	
+	for(let i = 0; i<arr.length; i++) {
+		if (arr[i] === lowest || arr[i] === highest) {
+			arr[i] === lowest ? console.log('low', arr[i]) : console.log('high', arr[i])
+			let end = arr[i] === lowest ? 0 : arr.length-1;
+			let tmp = arr[end];
+			arr[end] = arr[i];
+			arr[i] = tmp;
+			
+		}
+		else if(i>1) {
+			for(let j=i; j>0;) {
+				if(j === 1) {
+					let tmp = arr[j];
+					arr[j] = arr[i];
+					arr[i] = tmp;
+				}
+				while(arr[i] < arr[j]) {
+					j--
+				}
+				else {
+					let tmp1 = arr[i];
+					let tmp2;
+					for(let k=j; k<arr.length; k++) {
+						tmp2 = arr[k];
+						arr[k] = tmp1;
+						tmp1 = tmp2;
+					}
+				}
+			}
+		}
+		
+		
+
+	}
+	return arr
+} 

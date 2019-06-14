@@ -1,0 +1,102 @@
+
+
+_____________________________________________________
+_____________________________________________________
+The share price for a company over a week's trading is as follows: [128, 97, 121, 123, 98, 97, 105].
+ If you had to buy shares in the company on one day, and sell the shares on one of the following 
+days, write an algorithm to work out what the maximum profit you could make would be.
+
+function trades(arr) {
+	let increases = [];
+	let flux =0;
+	let buyDay;
+	let sellDay;
+	for(let i = 1; i<arr.length; i++) {
+		let incr = arr[i-1] - arr[i]
+		increases.push(~incr+1)
+	}
+	for(let j=1; j<increases.length; j++) {
+		if(increases[j]-increases[j-1] > flux) {
+			buyDay = j-1;
+			sellDay = j;
+			flux = increases[j]-increases[j-1]
+				
+			let k = j;
+			while(flux+increases[k] > flux) {
+			flux = flux+increases[k];
+			sellDay=k;
+			k++
+			}
+		}
+		
+	}
+let weeklyProjection = {
+	buydDay: buyDay+1,
+	sellDay: sellDay+1
+}
+return weeklyProjection
+
+}
+
+
+let ara = [128, 97, 121, 123, 98, 97, 105]
+
+_____________________________________________________
+Imagine that you wanted to find what the highest floor of a 100 story building you could drop an egg
+ was, without the egg breaking. But you only have two eggs. Write an algorithm to work out which 
+floors you should drop the eggs from to find this out in the most efficient way.
+
+
+
+
+function breakingPoint() {
+	let floors = 100;
+	let highestPoint = 0;
+	let eggs = 2;
+
+	for(let i = 0; i<floors;) {
+		if(breakage) {
+			i--
+			if(breakage) {
+				return highestPoint = i;
+			}
+		}
+		else {
+			return highestPoint = i;
+		}
+		
+		i+=2;
+	}
+return highestPoint;
+
+}
+
+
+
+
+_____________________________________________________
+
+
+
+
+
+
+
+_____________________________________________________
+_____________________________________________________
+
+
+
+
+
+
+_____________________________________________________
+
+
+_____________________________________________________
+
+
+
+
+_____________________________________________________
+_____________________________________________________

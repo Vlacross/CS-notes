@@ -1,0 +1,272 @@
+
+Converting to Binary
+________________________________________________________________________
+function binarium(num) {
+
+let binary= [ ];
+
+function handleNum(num) {
+if (num === 0) {
+    return num;
+}
+  if (num % 2 !== 0) {
+    binary.unshift(1)
+    return handleNum(Math.floor(num / 2))
+} else if (num % 2 === 0) {
+    binary.unshift(0)
+    return handleNum(num / 2)
+}
+}
+handleNum(num)
+return binary.join('')
+};
+
+________________________________________________________________________
+Converting from Binary
+________________________________________________________________________
+
+function decimator(bin) {
+let str = JSON.stringify(bin).split('').reverse()
+let res = 0;
+	for(let i = 0; i < str.length; ++i) {
+	let weight = 2 ** i;
+	str[i] === '1' ? res += weight : undefined;
+	console.log(str[i], res)
+}
+return res
+
+}
+________________________________________________________________________
+Two's complement function
+_____________________________________________________________________
+
+
+function twosComp(bin) {
+	let str = JSON.stringify(bin)
+	let inverse = [];
+	console.log(1, str)
+	for (let i = 0; i < str.length; i++) {
+		let inv = ~str[i] + 1
+inverse.push(inv + 1)
+}
+		console.log(2, parseInt(inverse.join('')))
+
+}
+
+
+
+with reverse loop :
+
+function bunction(u1) {
+let nar = [];
+for (let i = u1.length-1; i >= 0; i--) {
+nar.unshift(u1[i] === '1' ? '0' : '1')
+}
+console.log(nar)
+}
+________________________________________________________________________
+
+
+
+________________________________________________________________________
+
+function decimator(bin) {
+let str = JSON.stringify(bin)
+let res = 0;
+	for(let i = str.length -1; i > -1; --i) {
+console.log(str[i])
+str[i] === str[0] ? return : undefined
+}
+
+}
+VM995:6 Uncaught SyntaxError: Unexpected token return
+function decimator(bin) {
+let str = JSON.stringify(bin)
+let res = 0;
+	for(let i = str.length -1; i > -1; --i) {
+console.log(str[i])
+str[i] === str[0] ? break : undefined
+}
+
+}
+VM1029:6 Uncaught SyntaxError: Unexpected token break
+function decimator(bin) {
+let str = JSON.stringify(bin)
+let res = 0;
+	for(let i = str.length -1; i = -1; --i) {
+console.log(str[i])
+}
+
+________________________________________________________________________
+bitwise AND to check even / odd
+________________________________________________________________________
+
+function evenOdd(num) {
+return num & 1 ? 'odd' : 'even'
+}
+
+________________________________________________________________________
+printing ANDed ints and ORed ints
+_______________________________________________________________________
+function andAndOr(a, b) {
+console.log(`(${a} & ${b}) outputs: ${a&b} `)
+console.log(`(${a} | ${b}) outputs: ${a|b}`)
+}
+________________________________________________________________________
+function andAndOr(a, b, sign) {
+switch(sign) {
+    case 'AND':
+	console.log('You entered the bitwise AND');
+	break;
+	case 'OR':
+	console.log('You entered the bitwise OR');
+	break;
+	case 'XOR':
+	console.log('You entered the bitwise Explicit OR');
+	break;
+}
+
+console.log(`(${a} & ${b}) outputs: ${a&b} `)
+console.log(`(${a} | ${b}) outputs: ${a|b}`)
+console.log(`(${a} ^ ${b}) outputs: ${a^b}`)
+}
+
+_______________________________________________________________________
+specified bit without Shift Operators
+_______________________________________________________________________
+
+let bitObj = {
+    
+    checkBit: function(num, col) {
+            let str = num.toString(2).split('');
+            let place = col - 1;
+            console.log(str[place])
+            return str[place] === '1' ? 'set' : 'unset'
+            },
+    clearBit: function(num, col) {
+            let str = num.toString(2).split('');
+            for(let i = str.length-1; i >= 0; i--) {
+            if(str.length-i === col) {str[i] = '0'}
+            }
+            return str.join('')
+            },
+    setBit: function(num, col, setting) {
+            this.validateBool(setting)
+            let str = num.toString(2).split('');
+            for(let i = str.length-1; i >= 0; i--) {
+            if(str.length-i === col) {str[i] = !setting ? '0' : '1'}
+            }
+            return str.join('')
+            },
+    toggleBit: function(num, col) {
+            let str = num.toString(2).split('');
+            for(let i = str.length-1; i >= 0; i--) {
+            if(str.length-i === col) {str[i] = str[i] === '1' ? '0' : '1'}
+            }
+            return str.join('')
+            },
+    validateBool: function(bool) {
+            if(typeof bool != 'boolean') {
+            return console.log('incorrection bit setting parameters')
+            };
+            return bool;
+            }
+
+}
+
+________________________________________________________________________
+
+<<  Write a function that takes in a decimal value and a value that represents the number of bit positions to shift left with. Return or print out the final base 10 value after the shift  >>
+
+function leftShift(num, positions) {
+return num << positions
+}
+
+________________________________________________________________________
+<< Write a function which doubles an integer. >>
+
+function dubler(int) {
+return int << 1
+}
+
+________________________________________________________________________
+<< Write a function which quadruples an integer. >>
+
+function doubleDubler(int) {
+return int << 2
+}
+
+________________________________________________________________________
+<< Write a function which divides an integer by two, rounding down. >>
+
+function unDubler(int) {
+return int >> 1
+}
+________________________________________________________________________
+Write a function which calculates 2^n.
+
+function powerOf(int) {
+return 2 ** int
+}
+________________________________________________________________________
+
+
+
+function interLeaver(int1, int2) {
+
+let num1 = (int1).toString(2).split('');
+let num2 = (int2).toString(2).split('');
+
+let eightBit = (arr) => {
+
+if(arr.length < 8) {
+arr.unshift('0');
+return eightBit(arr) }
+if(arr.length > 8) {
+arr.shift(1);
+return eightBit(arr)}
+
+}
+eightBit(num1)
+eightBit(num2)
+
+let rez = [];
+for(let i = num1.length; i >=0; i--) {
+	rez.unshift(num2[i])
+	rez.unshift(num1[i])
+	}
+return parseInt(rez.join(''), 2)
+}
+
+
+
+
+
+________________________________________________________________________
+
+________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+________________________________________________________________________

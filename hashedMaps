@@ -1,0 +1,90 @@
+Write an algorithm to check whether any permutation of a string is a palindrom:
+
+function pali(str) {
+let count = 0;
+let odd = str.length % 2 === 0 ? 0 : 1;
+ 
+    for(let i = 0; i < str.length; i++) {
+        for(let j = 0; j < str.length; j++) {
+            if(str[i] === str[j] && i !== j) {
+                count++
+            }
+        }
+    }
+count = count + odd
+return count === str.length
+console.log('count', count)
+}
+
+__________________________________________________________
+__________________________________________________________
+
+Write an algorithm to group a list of words into anagrams.
+
+__________________________________________________________
+
+function anagram(arr) {
+let result = [];
+	for(let i = 0; i<arr.length; i++) {
+		let ar1 = [];
+		original = true;
+			for(let b = 0; b<result.length;b++) {
+					for(let c = 0; c < result[b].length; c++) {
+						if(result[b][c] === arr[i]) {
+							original = false;
+						}
+					}
+				}
+		if(original === true) {
+		ar1.push(arr[i])
+        
+		
+
+		for(let j = 0; j < arr.length; j++) {
+			if (arr[j].length === arr[i].length && i !== j) {
+			  let count = 0;
+			  let counted = 0;
+				for(let k = 0; k < arr[i].length; k++) {
+					for(let l = 0; l < arr[j].length; l++) {
+						if(arr[i][k] === arr[j][l]) {
+						count++;
+						}				
+
+					}
+				}
+
+				for(let m = 0; m<result.length;m++) {
+					for(let n = 0; n < result[m].length; n++) {
+						if(result[m][n] === arr[j]) {
+							counted++
+						}
+					}
+				}
+
+			  if(count === arr[i].length && counted === 0) {
+				ar1.push(arr[j])
+				}
+			}
+		}
+	result.push(ar1)
+    }
+	}
+  return result;
+}
+
+
+let ans = ['east', 'cars', 'acre', 'arcs', 'teas', 'eats', 'race']
+
+__________________________________________________________
+__________________________________________________________
+
+
+
+
+
+__________________________________________________________
+
+
+
+
+__________________________________________________________

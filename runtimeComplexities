@@ -1,0 +1,25 @@
+constant time 0(1)
+
+        -No matter the size of the input, the algorithm will take the sma eamount of time to complete
+
+
+
+Logarithmic Time 0(Log(n))
+
+
+        -takes longer with a larger input, though runTime increases slowly 
+
+Linear Time 0(n)
+
+        -Directly affected by size of input (size of 4 would take twice as long to process as 2)
+
+
+Polynomial 0(n^k)
+
+        -where input size n is raised to the power of input k
+        -Such as nested for Loops
+
+
+Exponential time 0(2^n)
+
+        -increases rapidly based on input size
